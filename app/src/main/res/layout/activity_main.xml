@@ -10,8 +10,57 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.zoyi.channel.plugin.android.sample.MainActivity">
 
-  <TextView
-      android:text="Hello World!"
-      android:layout_width="wrap_content"
+  <LinearLayout
+      android:id="@+id/layout_veil"
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+    <EditText
+        android:id="@+id/id"
+        android:hint="id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/name"
+        android:hint="name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/phone"
+        android:hint="phone number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/login"
+        android:text="Log in"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/login_guest"
+        android:text="Guest check in"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+  </LinearLayout>
+  <LinearLayout
+      android:id="@+id/layout_user"
+      android:visibility="gone"
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/logout"
+        android:text="Logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+  </LinearLayout>
+  <Button
+      android:id="@+id/launch"
+      android:text="Show chat"
+      android:layout_alignParentBottom="true"
+      android:layout_width="match_parent"
       android:layout_height="wrap_content"/>
 </RelativeLayout>
