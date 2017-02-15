@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import com.zoyi.channel.plugin.android.ChannelPlugin;
-import com.zoyi.channel.plugin.android.view.handler.CheckInCallback;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -98,6 +97,9 @@ public class MainActivity extends AppCompatActivity {
     Map<String, String> meta = new HashMap<>();
     meta.put("name", name.getText().toString());
     meta.put("mobileNumber", phone.getText().toString());
+
+    meta.put("temp", "Hello");
+    meta.put("Mika", "derica");
 
     ChannelPlugin.checkIn(id.getText().toString(), meta, new CheckInCallback() {
       @Override
