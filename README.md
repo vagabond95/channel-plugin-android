@@ -126,10 +126,10 @@ Place the ChannelButton view in a location that can be displayed across the scre
 | Name | Type | Default | Description |
 |:----:|:----:|:-------:|:-----------:|
 | channel_button_gravity | enum | bottom_right | ChannelView button's gravity (bottom_right, bottom_left, top_right, top_left) |
-| left_margin | dimension | 16dp | ChannelView button's left margin |
-| right_margin | dimension | 16dp | ChannelView button's right margin |
-| top_margin | dimension | 16dp | ChannelView button's top margin |
-| bottom_margin | dimension | 16dp | ChannelView button's bottom margin |
+| channel_button_left_margin | dimension | 16dp | ChannelView button's left margin |
+| channel_button_right_margin | dimension | 16dp | ChannelView button's right margin |
+| channel_button_top_margin | dimension | 16dp | ChannelView button's top margin |
+| channel_button_bottom_margin | dimension | 16dp | ChannelView button's bottom margin |
 
 **Unused margins are ignored. (For example, right_margin will ignored when gravity is bottom_left)**
 
