@@ -22,7 +22,7 @@ dependencies {
 
 ## Getting plugin key
 
-...
+[See this document's 'Getting plugin key' section](https://medium.com/channel-korea/%EC%B1%84%EB%84%90-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8-%EA%B0%80%EC%9D%B4%EB%93%9C-01-%EC%9B%B9%EC%97%90-%EB%B6%99%EC%9D%B4%EA%B8%B0-1f6d70fefbcc#.hj5jcuyb1)
 
 ## Initialize
 
