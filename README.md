@@ -124,6 +124,8 @@ ChannelPlugin.checkIn(CheckIn checkIn, OnCheckInListener listener) // for user
 
 - NETWORK_TIMEOUT
 
+- CHECK_IN_ERROR
+
 - NOT_AVAILABLE_VERSION
 
 - SERVICE_UNDER_CONSTRUCTION
