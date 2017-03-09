@@ -29,6 +29,8 @@ dependencies {
 You must create a class that extends `Application` and then declare this in your AndroidManifest.xml.
 If you already use own `Application` class, you can use that.
 
+Also, you must add `ChannelFileProvider` in your AndroidManifest.xml for Setting Up File Sharing. See this[document](https://developer.android.com/training/secure-file-sharing/setup-sharing.html)
+
 **Important**
 
 Channel plugin must be initialize in `Application`'s `onCreate()` event.
@@ -41,6 +43,18 @@ If you initialize it in any other way, it will not guarantee correct operation.
     android:name="com.example.MyApplication"
     ...
     >
+    
+    ...
+    <provider 
+        android:name="com.zoyi.channel.plugin.android.global.ChannelFileProvider"
+        android:authorities="com.zoyi.channel.desk.android.ch_provider"
+        android:exported="false"
+        android:grantUriPermissions="true">
+        <meta-data
+          android:name="android.support.FILE_PROVIDER_PATHS"
+          android:resource="@xml/ch_file_paths"/>
+    </provider>
+    ...
 </application>
 ```
 
