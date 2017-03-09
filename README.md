@@ -114,9 +114,10 @@ ChannelPlugin.checkIn(CheckIn checkIn, OnCheckInListener listener) // for user
 
 ```OnCheckInListener``` has two methods.
 
-- ```onSuccess()```
 
-- ```onFailed(ChannelException exception)```
+- ```onSuccess();```
+
+- ```onFailed(ChannelException exception);```
 
 ```ChannelException.StatusCode``` show reason why check in is failed.
 
