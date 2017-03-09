@@ -167,6 +167,12 @@ public class MyActivity extends Activity implements OnChannelPluginChangedListen
 }
 ```
 
+## Check out
+
+You must check out when your app user logged out or session finished.
+
+Just call `ChannelPlugin.checkOut();`
+
 ## Start chat
 
 There are two ways to start a chat.
@@ -204,7 +210,3 @@ Place the ChannelButton view in a location that can be displayed across the scre
 ### Start manually
 
 Just call `ChannelPlugin.launch(Context context);`
-
-### Finish chat session.
-
-Just call `ChannelPlugin.checkOut();`
