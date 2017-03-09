@@ -112,14 +112,13 @@ or
 ChannelPlugin.checkIn(CheckIn checkIn, OnCheckInListener listener) // for user
 ```
 
-```OnCheckInListener``` has two methods.
+`OnCheckInListener` has two methods.
 
+- `onSuccess()`
 
-- ```onSuccess();```
+- `onFailed(ChannelException exception)`
 
-- ```onFailed(ChannelException exception);```
-
-```ChannelException.StatusCode``` show reason why check in is failed.
+`ChannelException.StatusCode` show reason why check in is failed.
 
 - NOT_INITIALIZED
 
