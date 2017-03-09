@@ -80,7 +80,6 @@ The following information is required for check in.
 
 Meta data is meta data showing in user information.
 
-
 Just call `ChannelPlugin.checkIn(CheckIn checkIn)` and This is how to make `CheckIn` instance.
 
 ```java
@@ -98,6 +97,59 @@ ChannelPlugin.checkIn(checkIn);
 ```
 
 If you not set user id, it check in with veil.
+
+#### Check in callback
+
+You can get result of check in. Use
+
+```java
+ChannelPlugin.checkIn(OnCheckInListener listener) // for veil
+```
+
+or
+
+```java
+ChannelPlugin.checkIn(CheckIn checkIn, OnCheckInListener listener) // for user
+```
+
+```OnCheckInListener``` has two methods.
+
+- ```onSuccess()```
+
+- ```onFailed(ChannelException exception)```
+
+```ChannelException.StatusCode``` show reason why check in is failed.
+
+- NOT_INITIALIZED
+
+- NETWORK_TIMEOUT
+
+- NOT_AVAILABLE_VERSION
+
+- SERVICE_UNDER_CONSTRUCTION
+
+#### Add badge changed listner
+
+When you make own channel button, you can use `OnChannelPluginChangedListener` and call `ChannelPlugin.addOnChannelPluginChangedListener(listener)`
+
+When badge changed, you can receive counter from `badgeChanged(int count);`
+
+```java
+public class MyActivity extends Activity implements OnChannelPluginChangedListener {
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    ...
+    ChannelPlugin.addOnChannelPluginChangedListener(this);
+    ...
+  }
+
+  @Override
+  public void badgeChanged(int count) {
+    // change your own badge.
+  }
+}
+```
 
 ## Start chat
 

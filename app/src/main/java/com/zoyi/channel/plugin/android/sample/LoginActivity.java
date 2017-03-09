@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+import com.zoyi.channel.plugin.android.ChannelException;
 import com.zoyi.channel.plugin.android.ChannelPlugin;
 import com.zoyi.channel.plugin.android.CheckIn;
 import com.zoyi.channel.plugin.android.OnCheckInListener;
@@ -54,7 +55,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
       }
 
       @Override
-      public void onFailed() {
+      public void onFailed(ChannelException ex) {
         Toast.makeText(LoginActivity.this, "Check in failed", Toast.LENGTH_SHORT).show();
       }
     });

@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import com.zoyi.channel.plugin.android.ChannelException;
 import com.zoyi.channel.plugin.android.ChannelPlugin;
 import com.zoyi.channel.plugin.android.OnCheckInListener;
 
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
       }
 
       @Override
-      public void onFailed() {
+      public void onFailed(ChannelException ex) {
         Toast.makeText(MainActivity.this, "Check in failed", Toast.LENGTH_SHORT).show();
       }
     });
