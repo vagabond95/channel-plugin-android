@@ -14,25 +14,25 @@
 
 프로젝트가 생성되면 아래 화면에서 Android 앱에 Firebase 추가를 클릭합니다.
 
-![fcm_guide_2](https://github.com/DevYu89/channel-plugin-android/tree/master/images/fcm_guide_2.png)
+![fcm_guide_2](../images/fcm_guide_2.png)
 
 그리고 아래 화면에서 채널 플러그인을 사용할 앱의 패키지 이름, 앱 닉네임, 디버그 서명 인증서를 각각 입력하고 앱 추가 버튼을 클릭 합니다.
 
-![fcm_guide_3](https://github.com/DevYu89/channel-plugin-android/tree/master/images/fcm_guide_3.png)
+![fcm_guide_3](../images/fcm_guide_3.png)
 
 google-services.json 파일을 다운로드 하고 아래 화면에서 안내하고 있는 위치에 파일을 넣습니다. 마지막으로 계속 버튼을 클릭하고 bundle.gradle을 수정하여 gradle 세팅을 합니다.
 
-![fcm_guide_4](https://github.com/DevYu89/channel-plugin-android/tree/master/images/fcm_guide_4.png)
+![fcm_guide_4](../images/fcm_guide_4.png)
 
 
 ## Step 2. 채널 플러그인 안드로이드 설정에 서버키 등록
 아래 화면에서 좌측 상단의 설정 버튼(톱니바퀴 모양)을 누르고 프로젝트 설정으로 이동합니다.
 
-![fcm_guide_5](https://github.com/DevYu89/channel-plugin-android/tree/master/images/fcm_guide_5.png)
+![fcm_guide_5](../images/fcm_guide_5.png)
 
 클라우드 메시징 탭을 선택하고 서버키를 복사합니다.
 
-![fcm_guide_6](https://github.com/DevYu89/channel-plugin-android/tree/master/images/fcm_guide_6.png)
+![fcm_guide_6](../images/fcm_guide_6.png)
 
 서버키를 채널 플러그인 안드로이드 세팅에 등록합니다. (TODO : 안드로이드 세팅 화면 링크 추가)
 
