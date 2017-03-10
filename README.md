@@ -138,6 +138,8 @@ ChannelPlugin.checkIn(CheckIn checkIn, OnCheckInListener listener) // for user
 
 - NETWORK_TIMEOUT
 
+- ALREADY_CHECKED_IN
+
 - CHECK_IN_ERROR
 
 - NOT_AVAILABLE_VERSION
