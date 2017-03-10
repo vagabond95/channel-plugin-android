@@ -10,37 +10,37 @@
 
 그리고 아래 화면에서 새 프로젝트 만들기를 클릭하고 프로젝트 이름과 국가/지역을 선택하고 프로젝트 만들기를 클릭합니다.
 
-![fcm_guide_1](../images/en/fcm_guide_1.png)
+![fcm_guide_1](../../images/en/fcm_guide_1.png)
 
 프로젝트가 생성되면 아래 화면에서 Android 앱에 Firebase 추가를 클릭합니다.
 
-![fcm_guide_2](../images/en/fcm_guide_2.png)
+![fcm_guide_2](../../images/en/fcm_guide_2.png)
 
 그리고 아래 화면에서 채널 플러그인을 사용할 앱의 패키지 이름, 앱 닉네임, 디버그 서명 인증서를 각각 입력하고 앱 추가 버튼을 클릭 합니다.
 
-![fcm_guide_3](../images/en/fcm_guide_3.png)
+![fcm_guide_3](../../images/en/fcm_guide_3.png)
 
 google-services.json 파일을 다운로드 하고 아래 화면에서 안내하고 있는 위치에 파일을 넣습니다. 마지막으로 계속 버튼을 클릭하고 bundle.gradle을 수정하여 gradle 세팅을 합니다.
 
-![fcm_guide_4](../images/en/fcm_guide_4.png)
+![fcm_guide_4](../../images/en/fcm_guide_4.png)
 
 
 ## Step 2. 채널 플러그인 안드로이드 설정에 서버키 등록
 아래 화면에서 좌측 상단의 설정 버튼(톱니바퀴 모양)을 누르고 프로젝트 설정으로 이동합니다.
 
-![fcm_guide_5](../images/en/fcm_guide_5.png)
+![fcm_guide_5](../../images/en/fcm_guide_5.png)
 
 클라우드 메시징 탭을 선택하고 서버키를 복사합니다.
 
-![fcm_guide_6](../images/en/fcm_guide_6.png)
+![fcm_guide_6](../../images/en/fcm_guide_6.png)
 
 채널 데스크의 `채널 설정`에서 `모바일 앱 푸시 연동`으로 이동합니다
 
-![fcm_guide_7](../images/en/fcm_guide_7.png)
+![fcm_guide_7](../../images/en/fcm_guide_7.png)
 
 Android 연동 버튼을 클릭하여 `API Key`란에 `복사한 서버키`를 넣고 추가 버튼을 누릅니다.
 
-![fcm_guide_8](../images/en/fcm_guide_8.png)
+![fcm_guide_8](../../images/en/fcm_guide_8.png)
 
 
 ## Step 3. 푸시 알림 타이틀 설정
