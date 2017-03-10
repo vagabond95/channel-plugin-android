@@ -54,7 +54,7 @@ Notification의 타이틀로 사용할 텍스트를 `string resource`로 설정�
 ```
 
 
-## Step 4. FCM 커스텀 아이콘과 타이틀 등록
+## Step 4. FCM 커스텀 아이콘 등록
 만약 Notification의 아이콘을 수정하고 싶다면 아래의 파일 경로에 동일한 파일 이름을 가진 이미지를 추가하면 됩니다.
 
 `Notification small icon`
