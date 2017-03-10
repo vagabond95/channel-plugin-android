@@ -1,4 +1,7 @@
 # Channel plugin FCM for Android
+이 문서는 채널 플러그인의 FCM 기능을 사용하기 위한 가이드 문서 입니다.
+
+아래 순서대로 진행하면 채널 플러그인 적용 후 푸시메시지를 받을 수 있습니다.
 
 ## Step 1. Firebase 프로젝트 생성
 만약 진행 중인 Firebase 프로젝트가 있다면 이 단계를 건너 뛰고 Step 2로 이동 합니다.
@@ -7,7 +10,7 @@
 
 그리고 아래 화면에서 새 프로젝트 만들기를 클릭하고 프로젝트 이름과 국가/지역을 선택하고 프로젝트 만들기를 클릭합니다.
 
-![fcm_guide_1](https://github.com/DevYu89/channel-plugin-android/tree/master/images/fcm_guide_1.png)
+![fcm_guide_1](../images/fcm_guide_1.png)
 
 프로젝트가 생성되면 아래 화면에서 Android 앱에 Firebase 추가를 클릭합니다.
 
