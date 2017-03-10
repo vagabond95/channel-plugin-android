@@ -96,7 +96,7 @@ public class MyActivity extends AppCompatActivity {
 `FirebaseInstanceIdServic`e의 경우
 ```java
 public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
-
+  
   @Override
   public void onTokenRefresh() {
     String token = FirebaseInstanceId.getInstance().getToken();
@@ -112,7 +112,7 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
 `FirebaseMessagingService`의 경우
 ```java
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
-
+  
   @Override
   public void onMessageReceived(RemoteMessage remoteMessage) {
     Map<String, String> messages = remoteMessage.getData();
