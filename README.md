@@ -1,5 +1,9 @@
 # Channel plugin for Android
 
+## Documentation Translations
+- [Korean](./docs-translation/ko)
+- [Japanese](./docs-translation/ja)
+
 ## Requirement
 
 minSdkVersion &ge; 15
@@ -10,7 +14,7 @@ There are 2 options for installing Channel Plugin on your android app.
 
 #### Option 1: Install Channel Plugin with Firebase Cloud Messaging (FCM)
 
-Read [our guide](./fcm-guide) on Push notification for FCM.
+Read [our guide](./fcm-guide/en) on Push notification for FCM.
 
 ```groovy
 repositories {
