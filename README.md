@@ -1,8 +1,8 @@
 # Channel plugin for Android
 
 ## Documentation Translations
-- [Korean](./docs-translation/ko)
-- [Japanese](./docs-translation/ja)
+- [Korean](./docs-translations/ko)
+- [Japanese](./docs-translations/ja)
 
 ## Requirement
 
