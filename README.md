@@ -94,11 +94,28 @@ You must check in to start chat.
 
 There are two ways to check in.
 
-### Check in as veil
+### 1) Check in as veil
+
+There are two ways to check in as veil.
+
+#### 1-1) Check in as veil without information
 
 Just call `ChannelPlugin.checkIn();` anywhere.
 
-### Check in as user
+#### 1-2) Check in as veil with information
+
+The following information is required for check in.
+
+- Name (Optional, String)
+- Mobile number (Optional, String)
+- Avatar url (Optional, String)
+- Meta data (Optional, Map<String, String>)
+
+**Warn: `User id` is not required when you check in as veil**
+
+Just call `ChannelPlugin.checkIn(CheckIn checkIn)`.
+
+### 2) Check in as user
 
 User information is required to check in as a user.
 
@@ -199,7 +216,7 @@ There are two ways to start a chat.
 
 ### Add channel button view to your layout
 
-if you add `ChannelButton` in your layout, it shows automatically when check in successed.
+If you add `ChannelButton` in your layout, it shows automatically when check in successed.
 ```xml
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
