@@ -4,8 +4,26 @@
 
 minSdkVersion &ge; 15
 
-#### Gradle
+## Installation
 
+There are 2 options for installing Channel Plugin on your android app.
+
+#### Option 1: Install Channel Plugin with Firebase Cloud Messaging (FCM)
+
+Read [our guide](https://github.com/DevYu89/channel-plugin-android/tree/master/fcm-guide) on Push notification for FCM.
+
+```groovy
+repositories {
+  jcenter()
+}
+
+dependencies {
+  compile 'com.zoyi.channel:plugin-android:$[version]'
+  compile 'com.zoyi.channel:plugin-android-fcm:$[version]'
+}
+```
+
+#### Option 2: Install Channel Plugin without Firebase Cloud Messaging (FCM)
 ```groovy
 repositories {
   jcenter()
