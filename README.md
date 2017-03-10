@@ -10,7 +10,7 @@ There are 2 options for installing Channel Plugin on your android app.
 
 #### Option 1: Install Channel Plugin with Firebase Cloud Messaging (FCM)
 
-Read [our guide](https://github.com/DevYu89/channel-plugin-android/tree/master/fcm-guide) on Push notification for FCM.
+Read [our guide](./fcm-guide) on Push notification for FCM.
 
 ```groovy
 repositories {
