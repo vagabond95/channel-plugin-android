@@ -10,7 +10,7 @@ minSdkVersion &ge; 15
 
 #### 방법 1: 채널 플러그인을 Firebase Cloud Message(FCM)과 함께 사용
 
-Read [our guide](./fcm-guide) on Push notification for FCM.
+푸시 알림을 사용하기 위한 [FCM 가이드](./fcm-guide)는 여기를 참고하세요.
 
 ```groovy
 repositories {
