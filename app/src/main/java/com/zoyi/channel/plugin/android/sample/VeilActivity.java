@@ -3,23 +3,36 @@ package com.zoyi.channel.plugin.android.sample;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.Toast;
 import com.zoyi.channel.plugin.android.ChannelPlugin;
+import com.zoyi.channel.plugin.android.OnChannelPluginChangedListener;
+import com.zoyi.channel.plugin.android.push.ChannelPushClient;
 
 /**
  * Created by mika on 2017. 2. 16..
  */
-public class VeilActivity extends AppCompatActivity {
+public class VeilActivity extends AppCompatActivity implements OnChannelPluginChangedListener {
   @Override
   protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_veil);
+
+    ChannelPlugin.addOnChannelPluginChangedListener(this);
+
+    ChannelPushClient.handlePushMessage(this);
   }
 
   @Override
   protected void onDestroy() {
+    ChannelPlugin.removeOnChannelPluginChangedListener(this);
     ChannelPlugin.checkOut();
     Toast.makeText(this, "Check out (veil)", Toast.LENGTH_SHORT).show();
     super.onDestroy();
+  }
+
+  @Override
+  public void badgeChanged(int count) {
+    Log.i("Badge Changed", count + "");
   }
 }

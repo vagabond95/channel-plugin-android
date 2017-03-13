@@ -1,11 +1,33 @@
 # Channel plugin for Android
 
+## Documentation Translations
+- [Korean](./docs-translations/ko)
+- [Japanese](./docs-translations/ja)
+
 ## Requirement
 
 minSdkVersion &ge; 15
 
-#### Gradle
+## Installation
 
+There are 2 options for installing Channel Plugin on your android app.
+
+#### Option 1: Install Channel Plugin with Firebase Cloud Messaging (FCM)
+
+Read [our guide](./fcm-guide/en) on Push notification for FCM.
+
+```groovy
+repositories {
+  jcenter()
+}
+
+dependencies {
+  compile 'com.zoyi.channel:plugin-android:$[version]'
+  compile 'com.zoyi.channel:plugin-android-fcm:$[version]'
+}
+```
+
+#### Option 2: Install Channel Plugin without Firebase Cloud Messaging (FCM)
 ```groovy
 repositories {
   jcenter()
@@ -76,11 +98,28 @@ You must check in to start chat.
 
 There are two ways to check in.
 
-### Check in as veil
+### 1) Check in as veil
+
+There are two ways to check in as veil.
+
+#### 1-1) Check in as veil without information
 
 Just call `ChannelPlugin.checkIn();` anywhere.
 
-### Check in as user
+#### 1-2) Check in as veil with information
+
+The following information is required for check in.
+
+- Name (Optional, String)
+- Mobile number (Optional, String)
+- Avatar url (Optional, String)
+- Meta data (Optional, Map<String, String>)
+
+**Warn: `User id` is not required when you check in as veil**
+
+Just call `ChannelPlugin.checkIn(CheckIn checkIn)`.
+
+### 2) Check in as user
 
 User information is required to check in as a user.
 
@@ -138,6 +177,8 @@ ChannelPlugin.checkIn(CheckIn checkIn, OnCheckInListener listener) // for user
 
 - NETWORK_TIMEOUT
 
+- ALREADY_CHECKED_IN
+
 - CHECK_IN_ERROR
 
 - NOT_AVAILABLE_VERSION
@@ -179,7 +220,7 @@ There are two ways to start a chat.
 
 ### Add channel button view to your layout
 
-if you add `ChannelButton` in your layout, it shows automatically when check in successed.
+If you add `ChannelButton` in your layout, it shows automatically when check in successed.
 ```xml
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
