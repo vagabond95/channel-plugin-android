@@ -1,9 +1,5 @@
 # Channel plugin for Android
 
-## Documentation Translations
-- [Korean](./docs-translations/ko)
-- [Japanese](./docs-translations/ja)
-
 ## Requirement
 
 minSdkVersion &ge; 15
