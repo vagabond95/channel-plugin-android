@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import com.zoyi.channel.plugin.android.ChannelPlugin;
 import com.zoyi.channel.plugin.android.OnChannelPluginChangedListener;
+import com.zoyi.channel.plugin.android.model.etc.PushEvent;
 import com.zoyi.channel.plugin.android.push.ChannelPushClient;
 
 /**
@@ -38,6 +39,14 @@ public class VeilActivity extends AppCompatActivity implements OnChannelPluginCh
   @Override
   public void badgeChanged(int count) {
     Log.i(TAG, "Badge Changed count : " + count);
+  }
+
+  @Override
+  public void onReceivedPushMessage(PushEvent pushEvent) {
+    Log.i(TAG, "UserChat Id : " + pushEvent.getChatId());
+    Log.i(TAG, "Name : " + pushEvent.getName());
+    Log.i(TAG, "Message : " + pushEvent.getMessage());
+    Log.i(TAG, "Avatar Url : " + pushEvent.getAvatarUrl());
   }
 
   @Override
