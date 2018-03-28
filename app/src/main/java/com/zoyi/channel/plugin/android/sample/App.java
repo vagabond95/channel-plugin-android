@@ -10,6 +10,6 @@ public class App extends Application {
   @Override
   public void onCreate() {
     super.onCreate();
-    ChannelPlugin.initialize(this, "faa73a7c-4158-4a38-9a7a-793a969fd5bc");
+    ChannelPlugin.initialize(this, "4be44efa-59d8-4847-990f-d5cb3e9af40f");
   }
 }
