@@ -5,16 +5,15 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
-
-import com.zoyi.channel.plugin.android.ChannelPlugin;
-import com.zoyi.channel.plugin.android.OnChannelPluginChangedListener;
+import com.zoyi.channel.plugin.android.ChannelIO;
+import com.zoyi.channel.plugin.android.ChannelPluginListener;
 import com.zoyi.channel.plugin.android.model.etc.PushEvent;
 import com.zoyi.channel.plugin.android.push.ChannelPushClient;
 
 /**
  * Created by mika on 2017. 2. 16..
  */
-public class VeilActivity extends AppCompatActivity implements OnChannelPluginChangedListener {
+public class VeilActivity extends AppCompatActivity implements ChannelPluginListener {
 
   private static final String TAG = VeilActivity.class.getSimpleName();
 
@@ -23,39 +22,44 @@ public class VeilActivity extends AppCompatActivity implements OnChannelPluginCh
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_veil);
 
-    ChannelPlugin.addOnChannelPluginChangedListener(this);
+    ChannelIO.addChannelPluginListener(this);
 
-    ChannelPushClient.handlePushMessage(this);
+    ChannelPushClient.handlePushNotification(this);
   }
 
   @Override
   protected void onDestroy() {
-    ChannelPlugin.removeOnChannelPluginChangedListener(this);
-    ChannelPlugin.checkOut();
+    ChannelIO.removeChannelPluginListener(this);
+    ChannelIO.shutdown();
     Toast.makeText(this, "Check out (veil)", Toast.LENGTH_SHORT).show();
     super.onDestroy();
   }
 
   @Override
-  public void badgeChanged(int count) {
+  public void willShowMessenger() {
+
+  }
+
+  @Override
+  public void willHideMessenger() {
+
+  }
+
+  @Override
+  public void onChangeBadge(int count) {
     Log.i(TAG, "Badge Changed count : " + count);
   }
 
   @Override
-  public void onReceivedPushMessage(PushEvent pushEvent) {
+  public void onReceivePush(PushEvent pushEvent) {
     Log.i(TAG, "UserChat Id : " + pushEvent.getChatId());
-    Log.i(TAG, "Name : " + pushEvent.getName());
+    Log.i(TAG, "Name : " + pushEvent.getSenderName());
     Log.i(TAG, "Message : " + pushEvent.getMessage());
-    Log.i(TAG, "Avatar Url : " + pushEvent.getAvatarUrl());
+    Log.i(TAG, "Avatar Url : " + pushEvent.getSenderAvatarUrl());
   }
 
   @Override
-  public void willShowChatList() {
-    Log.i(TAG, "willShowChatList()");
-  }
-
-  @Override
-  public void willHideChatList() {
-    Log.i(TAG, "willHideChatList()");
+  public boolean onClickChatLink(String url) {
+    return false;
   }
 }

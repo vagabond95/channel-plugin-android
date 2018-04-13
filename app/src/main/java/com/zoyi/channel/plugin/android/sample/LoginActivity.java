@@ -7,10 +7,11 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-import com.zoyi.channel.plugin.android.ChannelException;
-import com.zoyi.channel.plugin.android.ChannelPlugin;
-import com.zoyi.channel.plugin.android.CheckIn;
-import com.zoyi.channel.plugin.android.OnCheckInListener;
+import com.zoyi.channel.plugin.android.ChannelIO;
+import com.zoyi.channel.plugin.android.ChannelPluginCompletionStatus;
+import com.zoyi.channel.plugin.android.ChannelPluginSettings;
+import com.zoyi.channel.plugin.android.Guest;
+import com.zoyi.channel.plugin.android.OnBootListener;
 
 /**
  * Created by mika on 2017. 2. 16..
@@ -42,21 +43,22 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
       return;
     }
 
-    CheckIn checkIn = CheckIn.create()
-        .withUserId(id)
-        .withName(name)
-        .withMobileNumber(phoneNumber)
-        .withMeta("App id", APP_ID);
+    ChannelPluginSettings pluginSettings = new ChannelPluginSettings("4be44efa-59d8-4847-990f-d5cb3e9af40f");
 
-    ChannelPlugin.checkIn(checkIn, new OnCheckInListener() {
-      @Override
-      public void onSuccessed() {
-        ActivityUtils.setNextActivity(LoginActivity.this, UserActivity.class).startActivity();
-      }
+    Guest guest = Guest.create()
+        .setId(id)
+        .setName(name)
+        .setMobileNumber(phoneNumber)
+        .setProperty("App id", APP_ID);
 
+    ChannelIO.boot(pluginSettings, guest, new OnBootListener() {
       @Override
-      public void onFailed(ChannelException ex) {
-        Toast.makeText(LoginActivity.this, "Check in failed", Toast.LENGTH_SHORT).show();
+      public void onCompletion(ChannelPluginCompletionStatus status) {
+        switch (status) {
+          default:
+            Toast.makeText(LoginActivity.this, "Check in failed", Toast.LENGTH_SHORT).show();
+            break;
+        }
       }
     });
   }
