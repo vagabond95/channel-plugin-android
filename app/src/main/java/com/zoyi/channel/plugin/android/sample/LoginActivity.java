@@ -9,11 +9,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import com.zoyi.channel.plugin.android.ChannelIO;
 import com.zoyi.channel.plugin.android.ChannelPluginCompletionStatus;
 import com.zoyi.channel.plugin.android.ChannelPluginSettings;
-import com.zoyi.channel.plugin.android.Guest;
 import com.zoyi.channel.plugin.android.OnBootListener;
+import com.zoyi.channel.plugin.android.Profile;
 
 /**
  * Created by mika on 2017. 2. 16..
@@ -49,14 +50,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     ChannelPluginSettings pluginSettings = new ChannelPluginSettings("4be44efa-59d8-4847-990f-d5cb3e9af40f");
+    pluginSettings.setUserId(id);
 
-    Guest guest = Guest.create()
-        .setId(id)
+    Profile profile = Profile.create()
         .setName(name)
         .setMobileNumber(phoneNumber)
         .setProperty("App id", APP_ID);
 
-    ChannelIO.boot(pluginSettings, guest, new OnBootListener() {
+    ChannelIO.boot(pluginSettings, profile, new OnBootListener() {
       @Override
       public void onCompletion(ChannelPluginCompletionStatus status) {
         Log.d("test", status.toString());
